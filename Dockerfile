@@ -7,7 +7,7 @@ RUN apt update && \
     npm install -g @angular/cli
 
 # RUN git clone https://github.com/crunchy-devops/angular-realworld-example-app.git
-# WORKDIR /angular-realworld-example-app
+WORKDIR /app
 RUN npm install --global yarn && \
     yarn install
 
