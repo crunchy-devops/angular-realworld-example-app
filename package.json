@@ -3,12 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint --force",
-    "prepare": "husky install"
+    "sonar": "sonar-scanner",
+    "lint": "ng lint"
   },
   "engines": {
     "node": "^14.20.0 || ^16.13.0 || ^18.10.0"
@@ -32,10 +28,18 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.4",
+    "@angular-eslint/builder": "15.2.1",
+    "@angular-eslint/eslint-plugin": "15.2.1",
+    "@angular-eslint/eslint-plugin-template": "15.2.1",
+    "@angular-eslint/schematics": "15.2.1",
+    "@angular-eslint/template-parser": "15.2.1",
     "@angular/cli": "^15.2.4",
     "@angular/compiler-cli": "15.2.3",
     "@types/jasmine": "~4.3.0",
     "@types/marked": "^4.0.8",
+    "@typescript-eslint/eslint-plugin": "5.48.2",
+    "@typescript-eslint/parser": "5.48.2",
+    "eslint": "^8.33.0",
     "husky": "^8.0.3",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.1",
@@ -45,12 +49,14 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
+    "tslint-angular": "^3.0.3",
     "typescript": "~4.8.2"
   },
   "lint-staged": {
-    "*.{ts,html,css,json,md}": "prettier --write"
-  },
-  "scripts": {
-    "sonar": "sonar-scanner"
+    "*.{ts,html,css,json,md}": "prettier --write",
+    "extends": [
+      "tslint:recommended",
+      "tslint-angular"
+    ]
   }
 }

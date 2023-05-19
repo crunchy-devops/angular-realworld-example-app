@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 RUN apt update && \
-    apt -y install curl git &&  \
+    apt -y install curl git vim &&  \
     curl -fsSL https://deb.nodesource.com/setup_18.x |  bash - && \
     apt -y install nodejs && \
     npm install -g @angular/cli
