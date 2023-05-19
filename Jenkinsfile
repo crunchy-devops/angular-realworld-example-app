@@ -3,7 +3,11 @@ pipeline {
   stages {
     stage('angular-docker') {
        steps {
-          git 'https://github.com/crunchy-devops/angular-realworld-example-app.git'
+          deleteDir()
+          checkout scmGit (
+              branches: [[name: '*/main']],
+              userRemoteConfigs: [[url: 'https://github.com/crunchy-devops/angular-realworld-example-app.git']]
+            )
           sh "docker build -t nodejs-realworld ."
        }
     }
