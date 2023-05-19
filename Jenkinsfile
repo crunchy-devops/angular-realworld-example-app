@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('angular-docker') {
        steps {
-          git 'https://github.com/crunchy-devops/hello-world.git'
+          git 'https://github.com/crunchy-devops/angular-realworld-example-app.git'
           sh "docker build -t nodejs-realworld ."
        }
     }
