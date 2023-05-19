@@ -7,7 +7,7 @@ pipeline {
           sh "docker build -t nodejs-realworld ."
        }
     }
-    stage{'angular-web'){
+    stage('angular-web'){
       steps {
         script {
            def set_container = sh(script: '''CONTAINER_NAME="web"
